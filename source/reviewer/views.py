@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, get_object_or_404
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
@@ -51,7 +52,7 @@ class GoodView(DetailView):
     template_name = 'goods/good_view.html'
 
 
-class Good_updateView(UpdateView):    
+class Good_updateView(PermissionRequiredMixin, UpdateView):    
     model = Good
     template_name = 'goods/good_update.html'
     form_class = GoodForm
@@ -61,14 +62,14 @@ class Good_updateView(UpdateView):
         return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
 
 
-class Good_deleteView(DeleteView):
+class Good_deleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'goods/good_delete.html'
     model = Good
     context_object_name = 'good'
     success_url = reverse_lazy('reviewer:good-list')
 
 
-class GoodCreateView(CreateView):
+class GoodCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'goods/add_good.html'
     model = Good
     form_class = GoodForm
@@ -102,16 +103,22 @@ class Good_Review_CreateView(CreateView):
         )
 
 
-class Review_deleteView(DeleteView):
+class Review_deleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'reviews/review_delete.html'
     model = Review
     context_object_name = 'review'
     success_url = reverse_lazy('reviewer:good-list')
 
 
-class Review_UpdateView(UpdateView):    
+class Review_UpdateView(PermissionRequiredMixin, UpdateView):    
     model = Review
     template_name = 'reviews/review_update.html'
     form_class = ReviewForm
     context_object_name = 'review'
+    permission_required = 'tracker.change_issue'
     success_url = reverse_lazy('reviewer:good-list')
+
+    def has_permission(self):
+        review = get_object_or_404(Review, id=self.kwargs.get('pk'))
+        good = review.good
+        return  self.request.user in review.author and super().has_permission()

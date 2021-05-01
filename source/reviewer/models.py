@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 
 class Good(models.Model):
-    CHOICES = [("1", "food"), ("2", "education"), ("3", "clothes"), ("4", "electronic")]
+    CHOICES = [("Еда", "food"), ("Обучение", "education"), ("Одежда", "clothes"), ("Электроника", "electronic")]
     summary = models.CharField(max_length = 60, null = False, blank = False, verbose_name = "Название")
     description = models.CharField(max_length = 2000, null = True, blank=True, verbose_name = "Описание")
     category = models.CharField(max_length = 29, null = True, blank=False, verbose_name = "Категория", choices= CHOICES)
