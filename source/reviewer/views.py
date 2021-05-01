@@ -119,10 +119,5 @@ class Review_UpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'reviews/review_update.html'
     form_class = ReviewForm
     context_object_name = 'review'
-    permission_required = 'tracker.change_issue'
+    permission_required = 'reviewer.change_review'
     success_url = reverse_lazy('reviewer:good-list')
-
-    def has_permission(self):
-        review = get_object_or_404(Review, id=self.kwargs.get('pk'))
-        good = review.good
-        return  self.request.user in review.author and super().has_permission()
