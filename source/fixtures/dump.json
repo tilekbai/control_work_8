@@ -31,16 +31,6 @@
 },
 {
   "model": "reviewer.good",
-  "pk": 4,
-  "fields": {
-    "summary": "phone",
-    "description": "Syaomi Redmi 10 a",
-    "category": "4",
-    "picture": ""
-  }
-},
-{
-  "model": "reviewer.good",
   "pk": 5,
   "fields": {
     "summary": "Table",
@@ -70,6 +60,26 @@
   }
 },
 {
+  "model": "reviewer.good",
+  "pk": 8,
+  "fields": {
+    "summary": "Stol",
+    "description": "lkjljklj",
+    "category": "Обучение",
+    "picture": ""
+  }
+},
+{
+  "model": "reviewer.good",
+  "pk": 9,
+  "fields": {
+    "summary": "Boots",
+    "description": "Color: Green-yellow",
+    "category": "Одежда",
+    "picture": ""
+  }
+},
+{
   "model": "reviewer.review",
   "pk": 1,
   "fields": {
@@ -77,18 +87,9 @@
     "good": 1,
     "review_text": "hahahohohohohohohho",
     "rating": "5",
-    "moderation": false
-  }
-},
-{
-  "model": "reviewer.review",
-  "pk": 4,
-  "fields": {
-    "author": 3,
-    "good": 4,
-    "review_text": "hahahhahahahahhah",
-    "rating": "2",
-    "moderation": false
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
   }
 },
 {
@@ -99,18 +100,9 @@
     "good": 1,
     "review_text": "Ghoul",
     "rating": null,
-    "moderation": false
-  }
-},
-{
-  "model": "reviewer.review",
-  "pk": 8,
-  "fields": {
-    "author": 1,
-    "good": 7,
-    "review_text": "Niho-niho",
-    "rating": "4",
-    "moderation": false
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
   }
 },
 {
@@ -121,7 +113,9 @@
     "good": 5,
     "review_text": "Good table",
     "rating": "4",
-    "moderation": false
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
   }
 },
 {
@@ -132,7 +126,9 @@
     "good": 6,
     "review_text": "Normalno",
     "rating": "4",
-    "moderation": false
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
   }
 },
 {
@@ -141,9 +137,37 @@
   "fields": {
     "author": 1,
     "good": 5,
-    "review_text": "Bingo",
+    "review_text": "Bingo Bongo",
     "rating": "3",
-    "moderation": false
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 18,
+  "fields": {
+    "author": 2,
+    "good": 7,
+    "review_text": "Review",
+    "rating": "3",
+    "moderation": false,
+    "start_date": "2021-05-01T15:24:07.740Z",
+    "update_date": "2021-05-01T15:24:07.759Z"
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 19,
+  "fields": {
+    "author": 1,
+    "good": 9,
+    "review_text": "Nishtyak",
+    "rating": "4",
+    "moderation": true,
+    "start_date": "2021-05-01T15:31:07.710Z",
+    "update_date": "2021-05-01T15:31:07.693Z"
   }
 },
 {
@@ -184,80 +208,6 @@
     "github": "asdfasdfasfda",
     "avatar": "",
     "about_me": "jkjkjkjkjkjkjkjkjkj"
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$bByIcETcELb4y2AhqimtZO$o2Xbmo1ewnz5hS1EVRacy1Kv5MT10+e+s1RMttMsLf8=",
-    "last_login": "2021-05-01T12:07:17Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "admin",
-    "last_name": "adminovich",
-    "email": "admin@admin.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2021-05-01T06:20:10Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$4vLarxr2WN7J62D3enytca$gmrMqyI3Phw0RByjuuhZPx9SitPOpzXKJEbBFLGdS+A=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "user1",
-    "first_name": "user1",
-    "last_name": "userin1",
-    "email": "user_1@user.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2021-05-01T06:23:23Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$X6IlLK1Hm47M2S0Tm6fqY2$Tdr3l8V59gdkDcxZecSuMIRJGiFSE3GlDtW+Cs35fa0=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "user2",
-    "first_name": "user2",
-    "last_name": "user2",
-    "email": "user_2@user.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2021-05-01T06:23:51Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$P189K8R8JfwBpIRwtXNyIm$X4HsqkxQwz3OX50B1WshrCnyUQNWKq5ethgRAXuCoRA=",
-    "last_login": "2021-05-01T12:47:38.114Z",
-    "is_superuser": false,
-    "username": "moderator",
-    "first_name": "model",
-    "last_name": "moderar",
-    "email": "mode@mald.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2021-05-01T12:46:45Z",
-    "groups": [
-      1
-    ],
-    "user_permissions": []
   }
 }
 ]

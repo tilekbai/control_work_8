@@ -29,7 +29,12 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('review_text', 'rating')
-        
+
+
+class Moderation_ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('review_text', 'rating', 'moderation')
 
 
 class SearchReviewForm(forms.Form):

@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
-from .forms import SearchForm, GoodForm, ReviewForm
+from .forms import SearchForm, GoodForm, ReviewForm, Moderation_ReviewForm
 # Create your views here.
 
 class IndexView(ListView):
@@ -115,6 +115,15 @@ class Review_deleteView(PermissionRequiredMixin, DeleteView):
 
 
 class Review_UpdateView(PermissionRequiredMixin, UpdateView):    
+    model = Review
+    template_name = 'reviews/review_update.html'
+    form_class = ReviewForm
+    context_object_name = 'review'
+    permission_required = 'reviewer.change_review'
+    success_url = reverse_lazy('reviewer:good-list')
+
+
+class ModReview_UpdateView(PermissionRequiredMixin, UpdateView):    
     model = Review
     template_name = 'reviews/review_update.html'
     form_class = ReviewForm
