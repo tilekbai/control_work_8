@@ -18,7 +18,7 @@
     <div class="reviews_list">
         {% for review in good.reviews.all %}
             <div class="reviews">
-                <p>Author: <b>{{ review.author }}</b>.<br>Text: <b>{{ review.review_text }}</b> Rating: <b>{{ review.rating }}</p> 
+                <p>Author: <b>{{ review.author }}. Rating: <b>{{ review.rating }}</b>.<br>Text: <b>{{ review.review_text }}</b></p><p><a href="{% url 'reviewer:review-delete' review.id %}">Delete review</a></p>
             </div>
         {% empty %}
             <p>No reviews</p>

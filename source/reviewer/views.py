@@ -100,3 +100,11 @@ class Good_Review_CreateView(CreateView):
             'reviewer:good-view',
             kwargs={'pk': self.kwargs.get('pk')}
         )
+
+
+class Review_deleteView(DeleteView):
+    template_name = 'reviews/review_delete.html'
+    model = Review
+    context_object_name = 'review'
+    success_url = reverse_lazy('reviewer:good-list')
+

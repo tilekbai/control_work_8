@@ -1,0 +1,12 @@
+{% extends "goods/base.html" %}
+{% block title %}Удаление отзыва{% endblock title %}
+<body>
+    {% block page_header %}Удаление отзыва{% endblock page_header %}
+    {% block content %}
+    <form action="{% url 'reviewer:review-delete' review.id %}", method="POST">
+        {% include 'partial/review_form.html' with button_text="Удалить отзыв" %}
+        <a href="{% url 'reviewer:good-list' %}">Отмена</a>
+    </form>
+    {% endblock content %}     
+</body>
+</html>
