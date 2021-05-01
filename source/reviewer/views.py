@@ -68,12 +68,14 @@ class Good_deleteView(PermissionRequiredMixin, DeleteView):
     model = Good
     context_object_name = 'good'
     success_url = reverse_lazy('reviewer:good-list')
+    permission_required = 'reviewer.delete_good'
 
 
 class GoodCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'goods/add_good.html'
     model = Good
     form_class = GoodForm
+    permission_required = 'reviewer.add_good'
 
     def form_valid(self, form):
         good = form.save(commit = False)
