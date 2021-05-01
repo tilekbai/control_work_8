@@ -13,10 +13,10 @@ admin.site.register(Good, GoodAdmin)
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ["id", "author", "review_text", "rating", "good", "moderation"]
+    list_display = ["id", "author", "review_text", "rating", "good", "moderation", "start_date"]
     list_filter = ["id"]
     search_fields = ["good", "author", "rating"]
-    fields = ["id", "author", "review_text", "rating", "good"]
-    readonly_fields = ["id", "moderation"]
+    fields = ["id", "author", "review_text", "rating", "good", "moderation"]
+    readonly_fields = ["id", "start_date", "update_date"]
 
 admin.site.register(Review, ReviewAdmin)

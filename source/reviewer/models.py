@@ -27,6 +27,9 @@ class Review(models.Model):
     review_text = models.CharField(max_length = 2000, null = True, blank=False, verbose_name = "Текст Отзыва")
     rating = models.CharField(max_length = 4, null = True, blank=False, verbose_name = "Оценка", choices= CHOICES)
     moderation = models.BooleanField(default=False)
+    start_date = models.DateTimeField(auto_now=True)
+    update_date = models.DateTimeField(auto_now_add=True)
+
     
     class Meta:
         db_table = "reviews"
