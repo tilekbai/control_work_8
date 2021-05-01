@@ -1,10 +1,10 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, get_object_or_404
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
-from .forms import SearchForm, GoodForm
+from .forms import SearchForm, GoodForm, ReviewForm
 # Create your views here.
 
 class IndexView(ListView):
@@ -80,3 +80,23 @@ class GoodCreateView(CreateView):
     
     def get_success_url(self):
         return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
+
+
+class Good_Review_CreateView(CreateView):
+    model = Review
+    template_name = 'reviews/review_create.html'
+    form_class = ReviewForm
+
+    def form_valid(self, form):
+        good = get_object_or_404(Good, pk=self.kwargs.get('pk'))
+        review = form.save(commit=False)
+        review.good = good
+        review.author = self.request.user
+        review.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse(
+            'reviewer:good-view',
+            kwargs={'pk': self.kwargs.get('pk')}
+        )

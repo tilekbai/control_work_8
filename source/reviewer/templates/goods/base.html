@@ -13,6 +13,8 @@
     <ul class="menu">
         <li><a href="{% url 'reviewer:good-list' %}">All goods</a></li>
         <li><a href="{% url 'reviewer:good-add' %}">Add good</a></li>
+        
+        {% block menu %}{% endblock menu %}
     </ul>
 </nav>
     <div class="container">

@@ -1,6 +1,9 @@
 {% extends "goods/base.html" %}
 {% block title %}Good {{good.id}}{% endblock title %}
 <body>
+    {% block menu %}
+    <li><a href="{% url 'reviewer:review-add' good.pk %}">Add review</a></li>
+    {% endblock %}
     {% block page_header %}Good {{good.id}}{% endblock page_header %}
     {% block content %}
     <p>{{ good.summary }}</p>
@@ -13,7 +16,7 @@
     {% endif %}
     <h3>Reviews:</h3>
     <div class="reviews_list">
-        {% for review in review.good.all %}
+        {% for review in good.reviews.all %}
             <div class="reviews">
                 <p>Author: <b>{{ review.author }}</b>.<br>Text: <b>{{ review.review_text }}</b> Rating: <b>{{ review.rating }}</p> 
             </div>

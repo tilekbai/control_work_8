@@ -23,3 +23,15 @@ class GoodDeleteForm(forms.Form):
 
 class SearchForm(forms.Form):
     search_value = forms.CharField(max_length=100, required=False, label="Поиск")
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('author', 'review_text', 'rating')
+        
+
+
+class SearchReviewForm(forms.Form):
+    search_value = forms.CharField(max_length=100, required=False, label="Поиск")
+
