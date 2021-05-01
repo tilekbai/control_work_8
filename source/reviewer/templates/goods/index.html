@@ -10,7 +10,7 @@
         {% include "partial\search_form.html" %}
         <p>Список товаров</p>
         {% for good in goods %} 
-                <p>Название: <b>{{ good.summary }}</b>.</p> 
+                <p>Название: <a href="{% url 'reviewer:good-view' good.id %}"><b>{{ good.summary }}</b></a></p>
         {% endfor %}
         {% include "partial/paginate.html" %}
         {% endblock content %}

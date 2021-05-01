@@ -1,0 +1,11 @@
+{% extends "goods/base.html" %}
+{% block title %}Good {{good.id}}{% endblock title %}
+<body>
+    {% block page_header %}Good {{good.id}}{% endblock page_header %}
+    {% block content %}
+    <p>{{ good.summary }}</p>
+    <p>Описание: {{ good.description }}</p>
+    <p>Категория: {{ good.category }}</p>
+    <p>{{ good.picture }}</p>
+    {% endblock content %}
+</body>

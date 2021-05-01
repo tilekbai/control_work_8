@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
@@ -43,3 +43,8 @@ class IndexView(ListView):
             context["query"] = urlencode({"search_value": self.search_data})
 
         return context
+
+
+class GoodView(DetailView):
+    model = Good
+    template_name = 'goods/good_view.html'
