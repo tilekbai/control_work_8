@@ -86,7 +86,7 @@ class GoodCreateView(PermissionRequiredMixin, CreateView):
         return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
 
 
-class Good_Review_CreateView(CreateView):
+class Good_Review_CreateView(LoginRequiredMixin, CreateView):
     model = Review
     template_name = 'reviews/review_create.html'
     form_class = ReviewForm
