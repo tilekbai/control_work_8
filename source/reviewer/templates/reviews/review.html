@@ -1,0 +1,11 @@
+{% extends "goods/base.html" %}
+{% block title %}Review {{issue.id}}{% endblock title %}
+<body>
+    {% block page_header %}Review {{issue.id}}{% endblock page_header %}
+    {% block content %}
+    <p>Author: {{ review.author }}</p>
+    <p>Text: {{ review.review_text }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <p>Moderation: {{ review.moderation }}</p>
+    {% endblock content %}
+</body>
