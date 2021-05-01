@@ -108,3 +108,10 @@ class Review_deleteView(DeleteView):
     context_object_name = 'review'
     success_url = reverse_lazy('reviewer:good-list')
 
+
+class Review_UpdateView(UpdateView):    
+    model = Review
+    template_name = 'reviews/review_update.html'
+    form_class = ReviewForm
+    context_object_name = 'review'
+    success_url = reverse_lazy('reviewer:good-list')

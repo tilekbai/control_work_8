@@ -1,0 +1,10 @@
+{% extends "goods/base.html" %}
+{% block title %}Редактирование отзыва{% endblock title %}
+<body>
+    {% block page_header %}<h1>Редактирование отзыва</h1>{% endblock page_header %}
+    {% block content %}<form action="{% url 'reviewer:review-update' review.id %}" method="post">
+        {% include "partial/form.html" with button_text="Редактировать" %}
+    {% endblock content %}
+    </form>
+</body>
+</html>
