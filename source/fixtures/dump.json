@@ -1,0 +1,140 @@
+[
+{
+  "model": "reviewer.good",
+  "pk": 1,
+  "fields": {
+    "summary": "apple",
+    "description": "red; yellow",
+    "category": "1",
+    "picture": ""
+  }
+},
+{
+  "model": "reviewer.good",
+  "pk": 2,
+  "fields": {
+    "summary": "book",
+    "description": "English dictionary",
+    "category": "2",
+    "picture": ""
+  }
+},
+{
+  "model": "reviewer.good",
+  "pk": 3,
+  "fields": {
+    "summary": "cap",
+    "description": "baseball cap, white-green",
+    "category": "3",
+    "picture": ""
+  }
+},
+{
+  "model": "reviewer.good",
+  "pk": 4,
+  "fields": {
+    "summary": "phone",
+    "description": "Syaomi Redmi 10 a",
+    "category": "4",
+    "picture": ""
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 1,
+  "fields": {
+    "author": 2,
+    "good": 1,
+    "review_text": "hahahohohohohohohho",
+    "rating": "5",
+    "moderation": false
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 2,
+  "fields": {
+    "author": 3,
+    "good": 2,
+    "review_text": "tertertyyyytreeeevvvee",
+    "rating": "4",
+    "moderation": false
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 3,
+  "fields": {
+    "author": 3,
+    "good": 3,
+    "review_text": "gregergerggoooggooggo",
+    "rating": "3",
+    "moderation": false
+  }
+},
+{
+  "model": "reviewer.review",
+  "pk": 4,
+  "fields": {
+    "author": 3,
+    "good": 4,
+    "review_text": "hahahhahahahahhah",
+    "rating": "2",
+    "moderation": false
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lGjohnctPaPRCE5BD4ywv8$MtfBBW/MT1KkeVn8PCLUdD7jGQax8C1d+5wNN13zPO4=",
+    "last_login": "2021-05-01T06:20:25.008Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-05-01T06:20:10.626Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$4vLarxr2WN7J62D3enytca$gmrMqyI3Phw0RByjuuhZPx9SitPOpzXKJEbBFLGdS+A=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-01T06:23:23.607Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$X6IlLK1Hm47M2S0Tm6fqY2$Tdr3l8V59gdkDcxZecSuMIRJGiFSE3GlDtW+Cs35fa0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-05-01T06:23:51.406Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
