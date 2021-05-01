@@ -111,6 +111,7 @@ class Review_deleteView(PermissionRequiredMixin, DeleteView):
     model = Review
     context_object_name = 'review'
     success_url = reverse_lazy('reviewer:good-list')
+    permission_required = 'reviewer.delete_review'
 
 
 class Review_UpdateView(PermissionRequiredMixin, UpdateView):    
