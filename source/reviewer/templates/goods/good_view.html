@@ -6,6 +6,20 @@
     <p>{{ good.summary }}</p>
     <p>Описание: {{ good.description }}</p>
     <p>Категория: {{ good.category }}</p>
-    <p>{{ good.picture }}</p>
+    {% if good.picture %}
+        <p>{{ good.picture }}</p>
+    {% else %}
+        <p><img src="http://dummyimage.com/100" /></p>
+    {% endif %}
+    <h3>Reviews:</h3>
+    <div class="reviews_list">
+        {% for review in review.good.all %}
+            <div class="reviews">
+                <p>Author: <b>{{ review.author }}</b>.<br>Text: <b>{{ review.review_text }}</b> Rating: <b>{{ review.rating }}</p> 
+            </div>
+        {% empty %}
+            <p>No reviews</p>
+        {% endfor %}
+    </div>
     {% endblock content %}
 </body>

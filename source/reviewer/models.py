@@ -16,6 +16,9 @@ class Good(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
 
+    def __str__(self):
+        return self.get_category_display()
+
 
 class Review(models.Model):
     CHOICES = [("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5")]
@@ -29,3 +32,6 @@ class Review(models.Model):
         db_table = "reviews"
         verbose_name = "Отзыв"
         verbose_name_plural = "Отзывы"
+
+    def __str__(self):
+        return self.get_good_display()

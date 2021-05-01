@@ -11,7 +11,9 @@
         {% include "partial\search_form.html" %}
         <p>Список товаров</p>
         {% for good in goods %} 
+            <div class="good">
                 <p>Название: <a href="{% url 'reviewer:good-view' good.id %}"><b>{{ good.summary }}</b></a><br><a href="{% url 'reviewer:good-update' good.id %}">Update</a></a><br><a href="{% url 'reviewer:good-delete' good.id %}">Delete</a></p>
+            </div>
         {% endfor %}
         {% include "partial/paginate.html" %}
         {% endblock content %}
