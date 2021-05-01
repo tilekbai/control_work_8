@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
@@ -58,3 +59,10 @@ class Good_updateView(UpdateView):
 
     def get_success_url(self):
         return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
+
+
+class Good_deleteView(DeleteView):
+    template_name = 'goods/good_delete.html'
+    model = Good
+    context_object_name = 'good'
+    success_url = reverse_lazy('reviewer:good-list')

@@ -1,0 +1,12 @@
+{% extends "goods/base.html" %}
+{% block title %}Удаление товара{% endblock title %}
+<body>
+    {% block page_header %}Удаление товара{% endblock page_header %}
+    {% block content %}
+    <form action="{% url 'reviewer:good-delete' good.id %}", method="POST">
+        {% include 'partial/good_form.html' with button_text="Да, я хочу удалить задачу" %}
+        <a href="{% url 'reviewer:good-view' good.id %}">Отмена</a>
+    </form>
+    {% endblock content %}     
+</body>
+</html>
