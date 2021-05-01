@@ -57,6 +57,7 @@ class Good_updateView(PermissionRequiredMixin, UpdateView):
     template_name = 'goods/good_update.html'
     form_class = GoodForm
     context_object_name = 'good'
+    permission_required = 'reviewer.change_good'
 
     def get_success_url(self):
         return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
