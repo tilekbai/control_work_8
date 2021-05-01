@@ -1,3 +1,3 @@
-{% for review in good.reviews.all %} 
-    <p>Goods: <b>{{ review.good }}</b><a href="{% url 'reviewer:review-view' review.id %}">Посмотреть отзыв</a></p>          
+{% for review in user_obj.reviews.all %} 
+    <p><b>Goods: {{ review.good }}Rating:{{ review.rating }}.<br>Text: <b>{{ review.review_text }}</b></p>          
 {% endfor %}
