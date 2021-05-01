@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render, reverse
+from django.views.generic import ListView, DetailView, UpdateView
 from django.db.models import Q
 from django.utils.http import urlencode
 from .models import Good, Review
-from .forms import SearchForm
+from .forms import SearchForm, GoodForm
 # Create your views here.
 
 class IndexView(ListView):
@@ -48,3 +48,13 @@ class IndexView(ListView):
 class GoodView(DetailView):
     model = Good
     template_name = 'goods/good_view.html'
+
+
+class Good_updateView(UpdateView):    
+    model = Good
+    template_name = 'goods/good_update.html'
+    form_class = GoodForm
+    context_object_name = 'good'
+
+    def get_success_url(self):
+        return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})

@@ -1,0 +1,10 @@
+{% extends "goods/base.html" %}
+{% block title %}Редактирование товара{% endblock title %}
+<body>
+    {% block page_header %}<h1>Редактирование товара</h1>{% endblock page_header %}
+    {% block content %}<form action="{% url 'reviewer:good-update' good.id %}" method="post">
+        {% include "partial/form.html" with button_text="Редактировать товар" %}
+    {% endblock content %}
+    </form>
+</body>
+</html>
