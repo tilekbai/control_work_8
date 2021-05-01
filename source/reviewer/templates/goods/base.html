@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 </head>
-<body><nav class="navbar">
+<body>
+    <nav class="navbar">
     <ul class="menu">
         <li><a href="{% url 'reviewer:good-list' %}">All goods</a></li>
+        <li><a href="{% url 'reviewer:good-add' %}">Add good</a></li>
     </ul>
 </nav>
     <div class="container">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -66,3 +66,17 @@ class Good_deleteView(DeleteView):
     model = Good
     context_object_name = 'good'
     success_url = reverse_lazy('reviewer:good-list')
+
+
+class GoodCreateView(CreateView):
+    template_name = 'goods/add_good.html'
+    model = Good
+    form_class = GoodForm
+
+    def form_valid(self, form):
+        good = form.save(commit = False)
+        good.save()
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('reviewer:good-view', kwargs={'pk': self.object.pk})
