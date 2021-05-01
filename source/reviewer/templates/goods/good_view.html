@@ -15,10 +15,17 @@
         <p><img src="http://dummyimage.com/100" /></p>
     {% endif %}
     <h3>Reviews:</h3>
+    <div>
+        {% if good.reviews.all %}
+        <h3>Rating: {{ review.rating }} </h3>
+        {% else %}
+            <h3>Rating: 0</h3>
+        {% endif %}
+    </div>
     <div class="reviews_list">
         {% for review in good.reviews.all %}
             <div class="reviews">
-                <p>Author: <b>{{ review.author }}. Rating: <b>{{ review.rating }}</b>.<br>Text: <b>{{ review.review_text }}</b></p><p><a href="{% url 'reviewer:review-delete' review.id %}">Delete review</a><a href="{% url 'reviewer:review-update' review.id %}">Update</a></p>
+                <p><b>Author: {{ review.author }}. Rating: <b>{{ review.rating }}. Email: <b>{{ review.author.email }}.</b>.<br>Text: <b>{{ review.review_text }}</b></p><p><a href="{% url 'reviewer:review-delete' review.id %}">Delete review</a><a href="{% url 'reviewer:review-update' review.id %}">Update</a></p>
             </div>
         {% empty %}
             <p>No reviews</p>

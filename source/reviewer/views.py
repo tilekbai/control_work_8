@@ -86,7 +86,7 @@ class Good_Review_CreateView(CreateView):
     model = Review
     template_name = 'reviews/review_create.html'
     form_class = ReviewForm
-
+    
     def form_valid(self, form):
         good = get_object_or_404(Good, pk=self.kwargs.get('pk'))
         review = form.save(commit=False)
